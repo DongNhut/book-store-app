@@ -3,9 +3,9 @@ import RenderBooksByShelf from "../untils/RenderBookUntils";
 
 const Shelf = ({ books, shelfTitle, shelfType, fetchBooks }) => {
   return (
-    <div className="bookshelf">
-      <h2 className="bookshelf-title">{shelfTitle}</h2>
-      <div className="bookshelf-books d-flex">
+    <div>
+      <h2>{shelfTitle}</h2>
+      <div className="d-flex">
         {RenderBooksByShelf(books, shelfType, fetchBooks)}
       </div>
     </div>

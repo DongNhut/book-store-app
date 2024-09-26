@@ -34,7 +34,6 @@ const SearchBook = () => {
 
   const handleShelfChange = (event, book) => {
     const newShelf = event.target.value;
-
     editBookInfo(book, newShelf)
       .then(() => {
         // Handle successful update

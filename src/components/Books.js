@@ -1,12 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router";
 
 const Book = ({ book, handleShelfChange, options }) => {
   const navigate = useNavigate();
-
-  const getDefaultShelf = () => {
-    return book?.shelf || "none";
-  };
+  const [selectedValue, setSelectedValue] = useState(book.shelf || "none");
 
   return (
     <div className="book">
@@ -24,8 +21,11 @@ const Book = ({ book, handleShelfChange, options }) => {
         ></div>
         <div className="book-shelf-changer">
           <select
-            value={getDefaultShelf()}
-            onChange={(event) => handleShelfChange(event, book)}
+            value={selectedValue}
+            onChange={(event) => {
+              setSelectedValue(event.target.value);
+              handleShelfChange(event, book)
+            }}
           >
             <option value="move" disabled>
               Move to...

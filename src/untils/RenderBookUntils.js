@@ -20,7 +20,7 @@ const RenderBooksByShelf = (books, shelf, fetchBooks) => {
 
   return (
     <div className="container">
-      <div class="row">
+      <div className="row">
         {books
           .filter((book) => book?.shelf === shelf)
           .map((book) => (
